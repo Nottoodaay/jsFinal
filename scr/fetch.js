@@ -8,6 +8,7 @@ fetch(`https://dummyjson.com/products?limit=9&skip=${skip}`)
     .then(res=>res.json())
     .then(dataFromFetch=> {
         data = dataFromFetch.products
+        console.log(data)
         data.forEach(element => {
             container.innerHTML=
                 container.innerHTML+
@@ -91,30 +92,101 @@ four.addEventListener("click",()=>{
 
 
 let detailsPage = (data) =>{
-    console.log(data)
     let article = document.querySelectorAll(".article")
 
     article.forEach(e=>{
         e.addEventListener("click",()=>{
-            container.innerHTML = ""
 
-            container.innerHTML = container.innerHTML + `
-            <div class="detailsPage">
-            <div class="detailsPageTitle">
-                <h4>${data[e.id-1].title}</h4>
-                <p>${data[e.id-1].description}</p>
-            </div>
-            <div class="detailsPageFristImg">
-                <img src="${data[e.id-1].images[0]}" alt="${data[e.id-1].title}">
-                <p>${data[e.id-1].description}</p>
-            </div>
-            <div class="detailsPageSecondImg">
-                <img src="${data[e.id-1].images[1]}" alt="${data[e.id-1].title}">
-                <img src="${data[e.id-1].images[2]}" alt="${data[e.id-1].title}">
-                <p>${data[e.id-1].description}</p>
-            </div>
-        </div>    
+            if(e.id<10){
+                container.innerHTML = ""
+
+                container.innerHTML = container.innerHTML + `
+                    <div class="detailsPage">
+                    <div class="detailsPageTitle">
+                        <h4>${data[e.id-1].title}</h4>
+                        <p>${data[e.id-1].description}</p>
+                    </div>
+                    <div class="detailsPageFristImg">
+                        <img src="${data[e.id-1].images[0]}" alt="${data[e.id-1].title}">
+                        <p>${data[e.id-1].description}</p>
+                    </div>
+                    <div class="detailsPageSecondImg">
+                        <img src="${data[e.id-1].images[1]}" alt="${data[e.id-1].title}">
+                        <img src="${data[e.id-1].images[2]}" alt="${data[e.id-1].title}">
+                        <p>${data[e.id-1].description}</p>
+                    </div>
+                </div>  
+                
+            `}
+
+            if(e.id>=10 && e.id <19){
+                container.innerHTML = ""
+
+                container.innerHTML = container.innerHTML + `
+                    <div class="detailsPage">
+                    <div class="detailsPageTitle">
+                        <h4>${data[e.id-10].title}</h4>
+                        <p>${data[e.id-10].description}</p>
+                    </div>
+                    <div class="detailsPageFristImg">
+                        <img src="${data[e.id-10].images[0]}" alt="${data[e.id-10].title}">
+                        <p>${data[e.id-10].description}</p>
+                    </div>
+                    <div class="detailsPageSecondImg">
+                        <img src="${data[e.id-10].images[1]}" alt="${data[e.id-10].title}">
+                        <img src="${data[e.id-10].images[2]}" alt="${data[e.id-10].title}">
+                        <p>${data[e.id-10].description}</p>
+                    </div>
+                </div>  
+                
             `
+            }
+
+            if(e.id > 19 && e.id <=28){
+                container.innerHTML = ""
+
+                container.innerHTML = container.innerHTML + `
+                    <div class="detailsPage">
+                    <div class="detailsPageTitle">
+                        <h4>${data[e.id-19].title}</h4>
+                        <p>${data[e.id-19].description}</p>
+                    </div>
+                    <div class="detailsPageFristImg">
+                        <img src="${data[e.id-19].images[0]}" alt="${data[e.id-19].title}">
+                        <p>${data[e.id-19].description}</p>
+                    </div>
+                    <div class="detailsPageSecondImg">
+                        <img src="${data[e.id-19].images[1]}" alt="${data[e.id-19].title}">
+                        <img src="${data[e.id-19].images[2]}" alt="${data[e.id-19].title}">
+                        <p>${data[e.id-19].description}</p>
+                    </div>
+                </div>  
+                
+            `
+            }
+
+            if(e.id>=28){
+                container.innerHTML = ""
+
+                container.innerHTML = container.innerHTML + `
+                    <div class="detailsPage">
+                    <div class="detailsPageTitle">
+                        <h4>${data[e.id-28].title}</h4>
+                        <p>${data[e.id-28].description}</p>
+                    </div>
+                    <div class="detailsPageFristImg">
+                        <img src="${data[e.id-28].images[0]}" alt="${data[e.id-28].title}">
+                        <p>${data[e.id-28].description}</p>
+                    </div>
+                    <div class="detailsPageSecondImg">
+                        <img src="${data[e.id-28].images[1]}" alt="${data[e.id-28].title}">
+                        <img src="${data[e.id-28].images[2]}" alt="${data[e.id-28].title}">
+                        <p>${data[e.id-28].description}</p>
+                    </div>
+                </div>  
+                
+            `
+            }
         })
     })
 }
