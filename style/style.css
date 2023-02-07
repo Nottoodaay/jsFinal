@@ -140,7 +140,6 @@ main h2{
 .article{
     width: 384px;
     height: 504px;
-    background-color: blue;
     border-radius: 8px;
     margin-top: 10px;
     border: 1px solid black;
@@ -151,7 +150,6 @@ main h2{
     width: 384px;
     height: 224px;
     border-radius: 8px;
-    background-color: yellow;
     overflow: hidden;
     /* cursor: pointer; */
 }
@@ -180,7 +178,7 @@ main h2{
 }
 
 .title p{
-    color:  red;
+    color: blue;
 }
 
 .changePages{
@@ -384,7 +382,6 @@ footer{
     .article{
         width: 668px;
         height: 220px;
-        background-color: blue;
         border-radius: 16px;
         display: flex;
     }
@@ -393,7 +390,6 @@ footer{
         width: 248px;
         height: 220px;
         border-radius: 16px;
-        background-color: yellow;
     }
 
     .innerContainer{
@@ -414,7 +410,7 @@ footer{
     }
 
     .title p{
-        color:  red;
+        color:  blue;
     }
     
     .frame{
@@ -590,7 +586,6 @@ footer{
     .article{
         width: 328px;
         height: 108px;
-        background-color: blue;
         border-radius: 8px;
         display: flex;
     }
@@ -599,7 +594,6 @@ footer{
         width: 76px;
         height: 108px;
         border-radius: 8px;
-        background-color: yellow;
     }
 
     .innerContainer{
@@ -622,7 +616,7 @@ footer{
     }
 
     .title p{
-        color:  red;
+        color:  blue;
     }
     
     .frame{

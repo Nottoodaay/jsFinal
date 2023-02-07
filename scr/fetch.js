@@ -9,7 +9,6 @@ fetch(`https://dummyjson.com/products?limit=9&skip=${skip}`)
     .then(dataFromFetch=> {
         data = dataFromFetch.products
         data.forEach(element => {
-            
             container.innerHTML=
                 container.innerHTML+
 
@@ -34,37 +33,7 @@ fetch(`https://dummyjson.com/products?limit=9&skip=${skip}`)
                 
         });
         
-    let article = document.querySelectorAll(".article")
-
-    article.forEach(e=>{
-        e.addEventListener("click",()=>{
-            console.log(data[e.id-1])
-            container.innerHTML = ""
-
-            container.innerHTML = container.innerHTML + `
-            <div class="detailsPage">
-            <div class="detailsPageTitle">
-                <h4>${data[e.id-1].title}</h4>
-                <p>${data[e.id-1].description}</p>
-            </div>
-            <div class="detailsPageFristImg">
-                <img src="${data[e.id-1].images[0]}" alt="${data[e.id-1].title}">
-                <p>${data[e.id-1].description}</p>
-            </div>
-            <div class="detailsPageSecondImg">
-                <img src="${data[e.id-1].images[1]}" alt="${data[e.id-1].title}">
-                <img src="${data[e.id-1].images[2]}" alt="${data[e.id-1].title}">
-                <p>${data[e.id-1].description}</p>
-            </div>
-        </div>    
-            `
-        })
-    })
-    
-    
-   
-
-    
+        detailsPage(data)
     })
 
 }
@@ -119,3 +88,33 @@ four.addEventListener("click",()=>{
     four.classList.add("active")
 })
 
+
+
+let detailsPage = (data) =>{
+    console.log(data)
+    let article = document.querySelectorAll(".article")
+
+    article.forEach(e=>{
+        e.addEventListener("click",()=>{
+            container.innerHTML = ""
+
+            container.innerHTML = container.innerHTML + `
+            <div class="detailsPage">
+            <div class="detailsPageTitle">
+                <h4>${data[e.id-1].title}</h4>
+                <p>${data[e.id-1].description}</p>
+            </div>
+            <div class="detailsPageFristImg">
+                <img src="${data[e.id-1].images[0]}" alt="${data[e.id-1].title}">
+                <p>${data[e.id-1].description}</p>
+            </div>
+            <div class="detailsPageSecondImg">
+                <img src="${data[e.id-1].images[1]}" alt="${data[e.id-1].title}">
+                <img src="${data[e.id-1].images[2]}" alt="${data[e.id-1].title}">
+                <p>${data[e.id-1].description}</p>
+            </div>
+        </div>    
+            `
+        })
+    })
+}
